@@ -43,6 +43,8 @@ body {
     align-items: center;
     position: sticky;
     top: 0;
+    width: 100vw; /* Utilise la largeur complète du viewport */
+    margin-left: calc(50% - 50vw); /* Centre et étend au-delà du container */
     z-index: 50;
     background-color: var(--white);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -50,10 +52,13 @@ body {
 
 /* Aligne le logo complètement à gauche et la nav à droite */
 .header-content {
+    width: 100%;
+    max-width: 1200px; /* Même largeur que votre container */
+    margin: 0 auto; /* Centre le contenu */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 1rem;
 }
 
 /* Force le logo à coller à gauche */
@@ -85,14 +90,13 @@ body {
 /* Responsive logo */
 @media (min-width: 768px) {
     .logo-circle {
-        width: 72px;
-        height: 72px;
+        width: 70px;
+        height: 80px;
     }
 }
 @media (min-width: 1024px) {
-    .logo-circle {
-        width: 80px;
-        height: 80px;
+    .logo {
+        margin-top: -2px; /* Remonte le logo de 3px */
     }
 }
 
@@ -123,13 +127,17 @@ body {
     display: none;
     flex-direction: column;
     gap: 0.75rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
+    padding: 1rem 0; /* Garde padding vertical mais supprime horizontal */
+    border-top: 1px solid #fcfcfc;
     margin-top: 1rem;
+    width: 100%;
+    margin-left: -1rem; /* Compense le padding du container parent */
+    margin-right: -1rem; /* Compense le padding du container parent */
 }
 
 .nav-mobile.active {
     display: flex;
+    width: calc(100% + 2rem); /* Compense les marges négatives */
 }
 
 .nav-mobile a {
@@ -140,10 +148,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: opacity 0.3s ease;
-}
-
-.nav-mobile a:hover {
-    opacity: 0.7;
+    padding: 0.5rem 1rem; /* Ajoute padding horizontal sur les liens */
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Mobile menu button */
@@ -742,6 +750,7 @@ body {
         justify-content: space-between;
         padding: 0;
         position: relative;
+        
     }
     
     .logo {
@@ -759,6 +768,7 @@ body {
     
     .header-content {
         display: none;
+        
     }
     
     .nav-mobile {
@@ -772,5 +782,7 @@ body {
         border-top: 1px solid #e5e7eb;
         margin-top: 0;
         z-index: 60;
+        
+        
     }
 }
