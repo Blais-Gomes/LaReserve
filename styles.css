@@ -23,7 +23,7 @@ body {
 
 /* Colors */
 :root {
-    --navy: #01184a;
+    --navy: #525744;
     --beige: #FDF8F0;
     --dark: #0A0A0A;
     --white: #ffffff;
@@ -447,6 +447,47 @@ body {
     font-size: 1.125rem;
 }
 
+/* Titre spécial pour la section carte */
+.section-dark .carte-title {
+    font-size: 4rem !important;
+    font-weight: 400 !important;
+    color: #525744 !important;
+    margin-bottom: 3rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.3em !important;
+    font-family: 'League Gothic', 'Montserrat', sans-serif !important;
+    line-height: 1.2;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .section-dark .carte-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 0.2em !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-dark .carte-title {
+        font-size: 1.4rem !important;
+        letter-spacing: 0.15em !important;
+    }
+}
+
+/* Titre encore plus grand sur les très grands écrans */
+@media (min-width: 1024px) {
+    .section-dark .carte-title {
+        font-size: 5rem !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .section-dark .carte-title {
+        font-size: 5.8rem !important;
+    }
+}
+
 .section-light {
     padding: 5rem 0;
     background-color: var(--beige);
@@ -464,6 +505,162 @@ body {
 
 .section-light p {
     color: rgba(0, 0, 0, 0.8);
+    font-size: 1.125rem;
+}
+
+/* Section Privatisation avec fond vert */
+.section-privatisation {
+    padding: 5rem 0;
+    background-color: #808b75;
+    text-align: center;
+    width: 100vw; /* Utilise la largeur complète du viewport */
+    margin-left: calc(50% - 50vw); /* Centre et étend au-delà du container */
+}
+
+.privatisation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.privatisation-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.privatisation-title {
+    font-family: 'League Gothic', 'Montserrat', sans-serif !important;
+    font-size: 4rem !important;
+    font-weight: 500 !important;
+    color: var(--white);
+    margin-bottom: 2.5rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.25em !important;
+    line-height: 1.1;
+}
+
+.privatisation-description {
+    color: rgba(0, 0, 0, 0.95) !important;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.privatisation-warning {
+    color: rgba(0, 0, 0, 0.9) !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+}
+
+.privatisation-button {
+    margin-top: 3rem;
+}
+
+.btn-privatisation {
+    display: inline-block;
+    background-color: #646b50;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid #646b50;
+    font-size: 1rem;
+}
+
+.btn-privatisation:hover {
+    background-color: transparent;
+    color: #646b50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(100, 107, 80, 0.3);
+}
+
+.btn-privatisation:active {
+    transform: translateY(0);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .privatisation-content {
+        padding: 0 1.5rem;
+    }
+    
+    .privatisation-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.2em !important;
+        margin-bottom: 2rem;
+    }
+    
+    .privatisation-description {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .privatisation-warning {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .btn-privatisation {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .privatisation-title {
+        font-size: 2rem;
+        letter-spacing: 0.18em !important;
+    }
+    
+    .privatisation-description {
+        font-size: 0.95rem;
+    }
+    
+    .privatisation-warning {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive pour grands écrans */
+@media (min-width: 1024px) {
+    .privatisation-title {
+        font-size: 4.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .privatisation-title {
+        font-size: 5rem;
+    }
+}
+
+.section-privatisation h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section-privatisation p {
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.125rem;
 }
 
@@ -686,6 +883,11 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Menu Button */
+.menu-button {
+    margin-top: 2.5rem; /* Augmentez cette valeur pour descendre le bouton plus bas */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-section h2 {
@@ -785,4 +987,31 @@ body {
         
         
     }
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #808b75;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid #808b75;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #808b75;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(128, 139, 117, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
 }

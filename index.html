@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Réserve - Restaurant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
                     <a href="galerie.html">GALERIE</a>
                     <a href="#privatisation">GROUPE</a>
                     <a href="#evenements">ÉVÈNEMENTS</a>
-                    <a href="#contact">CONTACT</a>
+                    <a href="#contact">INFO</a>
                 </nav>
             </div>
             <nav class="nav-mobile" id="mobileNav">
@@ -37,7 +37,7 @@
                 <a href="galerie.html">GALERIE</a>
                 <a href="#privatisation">GROUPE</a>
                 <a href="#evenements">ÉVÈNEMENTS</a>
-                <a href="#contact">CONTACT</a>
+                <a href="#contact">INFO</a>
             </nav>
         </div>
     </header>
@@ -73,7 +73,7 @@
     <!-- Other Sections -->
     <section id="carte" class="section-dark">
         <div class="container">
-            <h2>LA CARTE</h2>
+            <h2 class="carte-title">DÉCOUVREZ NOS CARTES</h2>
             <div class="menu-images">
                 <a href="images/menu1.png" target="_blank">
                     <img src="images/menu1.png" alt="Menu 1" class="menu-image">
@@ -83,15 +83,23 @@
                 </a>
             </div>
             <div class="menu-button" id="menu-button">
-                <a href="menu.pdf" target="_blank" class="btn">Voir la suite des menus</a>
+                <a href="menu.pdf" target="_blank" class="btn">carte des boissons</a>
             </div>
         </div>
     </section>
 
-    <section id="privatisation" class="section-light">
+    <section id="privatisation" class="section-privatisation">
         <div class="container">
-            <h2>PRIVATISATION</h2>
-            <p>Section en cours de développement</p>
+            <div class="privatisation-content">
+                <p class="privatisation-subtitle">GROUPE</p>
+                <h2 class="privatisation-title">RÉSERVATION DE GROUPE</h2>
+                <p class="privatisation-description">La Réserve vous accueille pour vos repas de groupe, de 8 à 12 personnes.</p>
+                <p class="privatisation-description">Les réservations se font uniquement dans le cadre d'un repas. Vous pouvez évidemment profiter de nos cocktails et boissons à table.</p>
+                <p class="privatisation-warning">⚠️ En revanche, il n'est pas possible de réserver uniquement pour boire un verre.</p>
+                <div class="privatisation-button">
+                    <a href="#contact" class="btn-privatisation">RÉSERVATION GROUPE</a>
+                </div>
+            </div>
         </div>
     </section>
 
