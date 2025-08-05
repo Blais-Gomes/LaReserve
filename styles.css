@@ -905,12 +905,13 @@ body {
     max-width: 350px; /* Allow larger maximum size */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    border: 2px solid var(--black); /* Add a black border around menu images */
+    --beige: #FDF8F0;
+    border: 2px solid #525744; /* Add a black border around menu images */
 }
 
 .menu-image:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px #525744;
 }
 
 /* Menu Button */
