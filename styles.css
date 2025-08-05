@@ -597,23 +597,27 @@ body {
 /* Responsive pour mobile */
 @media (max-width: 768px) {
     .privatisation-content {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
     }
     
     .privatisation-title {
-        font-size: 2.5rem;
-        letter-spacing: 0.2em !important;
-        margin-bottom: 2rem;
+        font-size: 2.8rem !important;
+        letter-spacing: 0.15em !important;
+        margin-bottom: 1.8rem !important;
+        line-height: 1.0 !important;
+        padding: 0 0.5rem;
     }
     
     .privatisation-description {
         font-size: 1rem;
         margin-bottom: 1.25rem;
+        padding: 0 0.5rem;
     }
     
     .privatisation-warning {
         font-size: 0.95rem;
         margin-bottom: 2.5rem;
+        padding: 0 0.5rem;
     }
     
     .btn-privatisation {
@@ -623,17 +627,43 @@ body {
 }
 
 @media (max-width: 480px) {
+    .privatisation-content {
+        padding: 0 0.8rem;
+    }
+    
     .privatisation-title {
-        font-size: 2rem;
-        letter-spacing: 0.18em !important;
+        font-size: 2.2rem !important;
+        letter-spacing: 0.12em !important;
+        margin-bottom: 1.5rem !important;
+        line-height: 0.95 !important;
+        padding: 0 0.3rem;
+        word-spacing: -0.1em;
     }
     
     .privatisation-description {
         font-size: 0.95rem;
+        padding: 0 0.3rem;
     }
     
     .privatisation-warning {
         font-size: 0.9rem;
+        padding: 0 0.3rem;
+    }
+    
+    .btn-privatisation {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Version très petits écrans */
+@media (max-width: 360px) {
+    .privatisation-title {
+        font-size: 1.9rem !important;
+        letter-spacing: 0.1em !important;
+        line-height: 0.9 !important;
+        margin-bottom: 1.3rem !important;
+        word-spacing: -0.15em;
     }
 }
 
