@@ -11,6 +11,15 @@
     }
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -19,6 +28,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     background-color: #FDF8F0;
+    margin: 0; /* AJOUTEZ CETTE LIGNE */
+    padding: 0; /* AJOUTEZ CETTE LIGNE */
 }
 
 /* Colors */
@@ -698,8 +709,283 @@ body {
 .footer {
     background-color: var(--navy);
     color: var(--white);
-    padding: 3rem 0;
+    padding: 4rem 0 0 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    position: relative;
+    margin-bottom: 0;
+    overflow-x: hidden; /* AJOUTÉ */
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%; /* AJOUTÉ */
+    box-sizing: border-box; /* AJOUTÉ */
+}
+
+/* Layout principal du footer */
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    width: 100%; /* AJOUTÉ */
+}
+
+/* Section logo et description */
+.footer-about .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-about .logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-about .logo-circle span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+.footer-about h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Titres des sections */
+.footer-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+/* Infos pratiques */
+.footer-info-item {
+    margin-bottom: 1.2rem;
+}
+
+.footer-info-item strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-info-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.footer-info-item a {
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-info-item a:hover {
+    opacity: 0.7;
+}
+
+/* Horaires */
+.hours-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.hour-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.day {
+    font-weight: 500;
+}
+
+.time {
+    opacity: 0.9;
+}
+
+/* Navigation */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Réseaux sociaux */
+.footer-social {
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer-social h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start !important;
+    gap: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Footer bottom - VERSION CENTRÉE */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    gap: 1rem;
+}
+
+.footer-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-legal p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legal-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.legal-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.footer-credits {
+    text-align: center;
+}
+
+.footer-credits p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Responsive design - SIMPLIFIÉ car tout est déjà centré */
+@media (max-width: 768px) {
+    .footer-bottom {
+        padding: 1.5rem 0;
+        gap: 0.8rem;
+    }
+    
+    .footer-legal {
+        gap: 0.8rem;
+    }
+    
+    .legal-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-legal p {
+        font-size: 0.8rem;
+    }
+    
+    .legal-links a {
+        font-size: 0.8rem;
+    }
+    
+    .footer-credits p {
+        font-size: 0.8rem;
+    }
 }
 
 /* Présentation Section */
@@ -1289,8 +1575,14 @@ body {
 
 .social-links {
     display: flex;
+    justify-content: flex-start !important;
     gap: 20px;
     align-items: center;
+}
+
+.footer-social .social-links {
+    justify-content: center !important;
+    gap: 1.5rem;
 }
 
 .social-link {
@@ -1380,7 +1672,7 @@ body {
     }
     
     .social-links {
-        justify-content: center;
+        justify-content: right !important;
     }
     
     .horaires-grid {
