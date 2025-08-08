@@ -64,88 +64,77 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Carousel functionality
-class ImageCarousel {
-    constructor(carouselElement) {
-        this.carousel = carouselElement;
-        this.images = carouselElement.querySelectorAll('.carousel-image');
-        this.indicators = carouselElement.querySelectorAll('.indicator');
-        this.currentIndex = 0;
-        this.autoPlayInterval = null;
-        
-        this.init();
-    }
-    
-    init() {
-        // Vérifier que nous avons des images
-        if (this.images.length === 0) return;
-        
-        // Ajouter les event listeners pour les indicateurs
-        this.indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                this.goToSlide(index);
-                this.resetAutoPlay();
-            });
-        });
-        
-        // Démarrer le défilement automatique
-        this.startAutoPlay();
-        
-        // Pause sur hover (desktop uniquement)
-        if (window.innerWidth > 768) {
-            this.carousel.addEventListener('mouseenter', () => {
-                this.pauseAutoPlay();
-            });
-            
-            this.carousel.addEventListener('mouseleave', () => {
-                this.startAutoPlay();
-            });
-        }
-    }
-    
-    goToSlide(index) {
-        // Retirer la classe active de l'image et indicateur actuels
-        this.images[this.currentIndex].classList.remove('active');
-        this.indicators[this.currentIndex].classList.remove('active');
-        
-        // Mettre à jour l'index
-        this.currentIndex = index;
-        
-        // Ajouter la classe active à la nouvelle image et indicateur
-        this.images[this.currentIndex].classList.add('active');
-        this.indicators[this.currentIndex].classList.add('active');
-    }
-    
-    nextSlide() {
-        const nextIndex = (this.currentIndex + 1) % this.images.length;
-        this.goToSlide(nextIndex);
-    }
-    
-    startAutoPlay() {
-        this.autoPlayInterval = setInterval(() => {
-            this.nextSlide();
-        }, 5000); // Change toutes les 5 secondes
-    }
-    
-    pauseAutoPlay() {
-        if (this.autoPlayInterval) {
-            clearInterval(this.autoPlayInterval);
-            this.autoPlayInterval = null;
-        }
-    }
-    
-    resetAutoPlay() {
-        this.pauseAutoPlay();
-        this.startAutoPlay();
-    }
-}
-
-// Initialiser les carousels quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', function() {
-    // Attendre un petit délai pour que les images se chargent
-    setTimeout(() => {
-        const carousels = document.querySelectorAll('.image-carousel');
-        carousels.forEach(carousel => {
-            new ImageCarousel(carousel);
+    // Initialiser les carousels
+    const carousels = document.querySelectorAll('.image-carousel');
+    
+    carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-image');
+        const indicators = carousel.querySelectorAll('.indicator');
+        let currentIndex = 0;
+        let autoPlayInterval;
+        
+        // S'assurer que seule la première image est visible au début
+        images.forEach((img, index) => {
+            if (index === 0) {
+                img.classList.add('active');
+            } else {
+                img.classList.remove('active');
+            }
         });
-    }, 100);
+        
+        // S'assurer que seul le premier indicateur est actif
+        indicators.forEach((indicator, index) => {
+            if (index === 0) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+        
+        function goToSlide(index) {
+            // Retirer active de tous
+            images.forEach(img => img.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            
+            // Ajouter active au bon index
+            images[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+        
+        function nextSlide() {
+            const nextIndex = (currentIndex + 1) % images.length;
+            goToSlide(nextIndex);
+        }
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        function resetAutoPlay() {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+        
+        // Event listeners pour les indicateurs
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+                resetAutoPlay();
+            });
+        });
+        
+        // Pause sur hover (desktop)
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+        
+        // Démarrer l'autoplay
+        startAutoPlay();
+    });
 });
